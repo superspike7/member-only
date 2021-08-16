@@ -13,15 +13,18 @@
 
   <body>
 
-      <div class="nav">
-        <div class="nav-buttons">
-          <ul>
-            <li> <%= link_to "home", root_path %> </li>
-            <li> <%= link_to "Sign Up", new_member_registration_path %> </li>
-            <li> <%= link_to "Sign In", new_member_session_path %> </li>
-            <li> <%= link_to "Log Out", destroy_member_session_path %> </li>
+      <div class="lg:h-10 w-full bg-blue-300 flex justify-between items-center text-lg">
+          <ul class="flex">
+            <li class="px-5 hover:text-blue-100"> <%= link_to "home", root_path %> </li>
           </ul>
-        </div>
+          <ul class="flex">
+          <% if member_signed_in? %>
+            <li class="px-5 hover:text-blue-100"> <%= link_to "Log Out", destroy_member_session_path %> </li>
+          <% else %>
+            <li class="px-5 hover:text-blue-100"> <%= link_to "Sign Up", new_member_registration_path %> </li>
+            <li class="px-5 hover:text-blue-100"> <%= link_to "Sign In", new_member_session_path %> </li>
+          <% end %>
+          </ul>
       </div>
 
     <%= yield %>
