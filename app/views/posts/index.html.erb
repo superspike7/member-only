@@ -10,7 +10,8 @@
             <% else %>
             <p class="text-xl font-bold"> Author: Anonymous</p>
             <% end %>
-            <p class="font-md" > <%= post.post %> </p> 
+            <p class="font-semibold" > <%= post.title%> </p> 
+            <p class="font-normal my-5" > <%= post.title%> </p> 
             <% if member_signed_in? %>
               <%= link_to 'Show', post %>
               <%= link_to 'Edit', edit_post_path(post) %>
