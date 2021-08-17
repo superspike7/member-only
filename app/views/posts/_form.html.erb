@@ -10,18 +10,17 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_area :title %>
+  <div class="relative my-3">
+    <%= form.label :title , class:"text-xl font-light" %> <br>
+    <%= form.text_field :title, class:"bg-white w-full border border-blue-500 rounded-md focus:ring-2 focus:ring-blue-700 outline-none p-2" %>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+  <div class="my-3">
+    <%= form.label :body, class:"text-xl font-light" %> <br>
+    <%= form.text_area :body , class:"bg-white h-32 w-full border border-blue-500 rounded-md focus:ring-2 focus:ring-blue-700 outline-none p-2" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions mb-5 text-white">
+    <%= form.submit "Post", class:"bg-blue-500 py-1 px-3 rounded-lg shadow-md cursor-pointer" %>
   </div>
 <% end %>

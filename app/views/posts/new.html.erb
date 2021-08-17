@@ -1,5 +1,6 @@
-<h1>New Post</h1>
+<div class="mx-auto w-1/4 mt-10 text-gray-800 py-4 px-5 rounded-lg">
+<h1 class="text-2xl text-center mb-12 font-bold">Create New post</h1>
+  <%= render 'form', post: @post %>
 
-<%= render 'form', post: @post %>
-
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Back', posts_path, class:"px-2 py-1 bg-red-500 text-white rounded-md" %>
+</div>

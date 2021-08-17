@@ -1,22 +1,20 @@
 <div class="w-1/2 mt-10 mx-auto">
-<%= link_to 'New Post', new_post_path, class: "px-3 py-2 bg-red-500 mx-auto block w-1/8" %>
+ <div class="w-1/4 mx-auto text-center">
+  <%= link_to 'New Post', new_post_path, class: "px-4 py-2 bg-red-500 rounded-lg text-white" %>
+ </div>
+
  <p id="notice"><%= notice %></p>
 
-  <div class="flex flex-col">
+  <div class="flex flex-col gap-4 mt-5">
         <% @posts.each do |post| %>
-        <div class="shadow-xl h-32 p-5  mx-5">
+        <div class="shadow-lg h-32 p-5 bg-white rounded-lg">
             <% if member_signed_in? %>
             <p class="text-xl font-bold"> Author: <%= post.member.name %>  </p>
             <% else %>
             <p class="text-xl font-bold"> Author: Anonymous</p>
             <% end %>
-            <p class="font-semibold" > <%= post.title%> </p> 
-            <p class="font-normal my-5" > <%= post.title%> </p> 
-            <% if member_signed_in? %>
-              <%= link_to 'Show', post %>
-              <%= link_to 'Edit', edit_post_path(post) %>
-              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>
+            <p class="font-semibold" > <%= post.title%>: </p> 
+            <p class="font-normal mt-1" > <%= post.body%> </p> 
         </div>
         <% end %>
   </div>
