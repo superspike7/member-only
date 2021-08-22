@@ -7,7 +7,7 @@
 
   <div class="flex flex-col gap-4 mt-5">
         <% @posts.each do |post| %>
-        <div class="shadow-lg h-32 p-5 bg-white rounded-lg">
+        <div class="shadow-lg p-5 bg-white rounded-lg">
             <% if member_signed_in? %>
             <p class="text-lg font-semibold text-gray-800"> Author: <%= post.member.name %>  </p>
             <% else %>
