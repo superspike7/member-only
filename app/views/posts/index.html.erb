@@ -9,12 +9,12 @@
         <% @posts.each do |post| %>
         <div class="shadow-lg h-32 p-5 bg-white rounded-lg">
             <% if member_signed_in? %>
-            <p class="text-xl font-bold"> Author: <%= post.member.name %>  </p>
+            <p class="text-lg font-semibold text-gray-800"> Author: <%= post.member.name %>  </p>
             <% else %>
-            <p class="text-xl font-bold"> Author: Anonymous</p>
+            <p class="text-lg font-semibold text-gray-800"> Author: Anonymous</p>
             <% end %>
-            <p class="font-semibold" > <%= post.title%>: </p> 
-            <p class="font-normal mt-1" > <%= post.body%> </p> 
+            <p class="font-semibold text-xl text-gray-700 mt-1" > <%= post.title%></p> 
+            <p class="font-light mt-2 text-gray-700" > <%= post.body%> </p> 
         </div>
         <% end %>
   </div>
